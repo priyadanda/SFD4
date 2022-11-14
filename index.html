@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+    
+    <title>Ticket Booking App</title>
+    <style>
+        body {        
+            background-image: url('travel.png');
+                      text-align: center;
+        }
+        
+    </style>
+</head>
+
+    <body>
+        
+        <h1 style = text-align:center;><br /><b>Booking Details</b></h1> 
+    <div id="section1">
+
+        <input type="radio" name="one"  id="One Way" value="One Way" onclick=" checkButton">One Way
+        <input type="radio" name="one" id="Round trip"  value="Round trip"  onclick=" checkButton" >Round trip<br><br> 
+
+        <form name="myform" onsubmit="return validFormFieldInput()" action="Travelinfo.html" method="post">
+
+    </div>
+
+
+
+
+    <div id="section2">
+       From: <input type="text" name="myname" id="newmine" >
+       To: <input type="text" name="myname" id="newmine" ><br><br>
+       Departure: <input type="date" name="mydate" id="newmine" >
+       Return date: <input type="date" name="mydate" id="newmine" >
+    </div>
+
+    <div id="Section3">
+      
+        <h2 >Number of passengers</h2>
+           Adults: <input type="number" name="myname" id="newmine">
+                               
+           Children: <input type="number" name="myname" id="newmine">
+
+</div>
+
+
+    <div id="Section4">
+      
+        <h3 >Passenger 1 details</h3>
+           Name: <input type="text" name="myname" id="newmine"  pattern="[a-zA-Z]{5,}" title="Only Alphabets with minimum five">
+                               
+             Gender: <input type="radio" name="gen" id="Male" value="Male" onclick="check">Male
+                       <input type="radio" name="gen" id="Female" value="female" onclick="check">Female
+                       Age: <input type="number" name="myname" id="newmine"><br>
+            
+                               
+                       <h3 >Passenger 2 details</h3>
+                       Name: <input type="text" name="myname" id="newmine"  pattern="[a-zA-Z]{5,}" title="Only Alphabets with minimum five">
+                                           
+                         Gender: <input type="radio" name="gen" id="Male" value="Male" onclick="check">Male
+                                   <input type="radio" name="gen" id="Female" value="female" onclick="check">Female
+                                   Age: <input type="number" name="myname" id="newmine"><br>
+
+                                   <h3 >Passenger 2 details</h3>
+                       Name: <input type="text" name="myname" id="newmine"  pattern="[a-zA-Z]{5,}" title="Only Alphabets with minimum five">
+                                           
+                         Gender: <input type="radio" name="gen" id="Male" value="Male" onclick="check">Male
+                                   <input type="radio" name="gen" id="Female" value="female" onclick="check">Female
+                                   Age: <input type="number" name="myname" id="newmine">
+         
+         </div> 
+         <div id="section5">
+            <h3 >Payment Details</h3>
+           Full Name: <input type="text" name="myname" id="newmine" >
+           Email: <input type="text" name="myemail" id="newmine" >
+           Mobile: <input type="number" name="mobile" id="newmine" ><br><br><br>
+           <input type="submit" value="SUBMIT">
+         </div>
+        </form>
+ 
+        <script>
+    function validFormFieldInput()
+                        {  
+                            const newTaskNameInput = document.querySelector('#Male');
+                            
+                                                                
+             let From_place=document.getElementById("newmine").value;
+             let To_place=document.getElementById("newmine").value;  
+                        if(!From_place == To_place){
+                            return true;
+                        }   
+
+                let Adults=document.getElementById("newmine").value;     
+                let Child=document.getElementById("newmine").value; 
+                if(!Adults == Child){
+                    return true;
+                }
+                let male=document.getElementById("Male").value;
+                let female=document.getElementById("Female").value;
+
+                if(male){
+                  return true;
+                }
+                else{
+                    return flase;
+                }
+    
+                let Age =document.getElementById("newmine").value; 
+
+                   let username=document.getElementById("newmine").value;
+                     
+                     if (username== "null" || username == "")
+                            {
+                               alert( "enter correctname");
+                               return false;
+                            }
+    
+               let mymail=document.myform.myemail.value;
+               let attherate=mymail.indexOf("@");
+               let atthedot=mymail.lastIndexOf(".");
+    
+               if (attherate<1 || atthedot<attherate+2 || atthedot>=mymail.length)
+                      {
+                         alert( "enter the correct email");
+                         return false;
+                      }
+    
+                let curdate=new Date();
+                     let dept=Date(document.myform.mydate.value)
+                     let Retn=Date(document.myform.mydate.value)
+                     if (dep>=curdate)
+                            {
+                               alert( "enter the correct date");
+                               return false;
+                            }
+
+                            if (Retn>=curdate)
+                            {
+                               alert( "enter the correct date");
+                               return false;
+                            }
+    
+                            let mobile1=(document.myform.mobile.value)
+    
+    if (mobile1.length==10)
+        {
+           return true
+        }
+     else      
+            {
+              alert( "enter the correct 10 digits number");
+              return false;
+           }
+    
+    
+    
+    
+    
+    
+    
+        }
+         
+    
+        </script>
+    
+</body>
+</html>
